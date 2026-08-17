@@ -4,13 +4,138 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab 1</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: #1a252f;
+            padding: 1rem 2rem;
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a.brand {
+            color: #ffffff;
+            font-size: 1.25rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav ul li a {
+            color: #dcdde1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        nav ul li a:hover {
+            color: #3498db;
+        }
+
+        /* Layout Container */
+        main {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Card Styles */
+        .card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card h2, .card h3 {
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        .card p {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+
+        .card a.btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: #ffffff;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 4rem;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .card a.btn:hover {
+            background-color: #2980b9;
+        }
+
+        /* SVG Placeholder Styling */
+        .img-placeholder {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Small Cards Grid */
+        .section-title {
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #e2e8f0;
+            color: #64748b;
+            margin-top: 3rem;
+        }
+    </style>
 </head>
 <body>
 
     <!-- Navigation Bar -->
     <header>
         <nav>
-            <a href="#"><strong>Lab 1</strong></a>
+            <a href="#" class="brand">Lab 1</a>
             <ul>
                 <li><a href="#link1">Link 1</a></li>
                 <li><a href="#link2">Link 2</a></li>
@@ -19,60 +144,68 @@
         </nav>
     </header>
 
-    <hr>
-
     <!-- Main Content Area -->
     <main>
 
         <!-- Large Featured Card -->
-        <section>
-            <article>
-                <img src="https://via.placeholder.com/800x400" alt="Featured Large Image Placeholder" width="100%">
-                <h2>Featured Project Title</h2>
-                <p>This is a description inside the main featured card. Use this space to highlight your primary showcase item, lab summary, or main project spotlight.</p>
-                <a href="#">Read More</a>
-            </article>
+        <section class="card">
+            <svg class="img-placeholder" width="600" height="300" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+                <rect width="100%" height="100%" fill="#cccccc"/>
+                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#666666">600 x 300</text>
+            </svg>
+            <div class="card-body">
+                <h2>Featured Showcase</h2>
+                <p>This is your primary featured card section. The SVG placeholder above scales seamlessly across mobile and desktop devices.</p>
+                <a href="#link1" class="btn">Explore Featured</a>
+            </div>
         </section>
 
-        <hr>
-
-        <!-- Grid of Small Cards -->
-        <section>
-            <h2>Recent Work</h2>
+        <!-- Small Cards Grid -->
+        <h2 class="section-title">Recent Work</h2>
+        <section class="grid-container">
 
             <!-- Small Card 1 -->
-            <article>
-                <img src="https://via.placeholder.com/300x200" alt="Small Image Placeholder 1" width="300">
-                <h3>Card Title 1</h3>
-                <p>Short description summarizing the content or feature of the first small card component.</p>
-                <a href="#">View Details</a>
+            <article class="card">
+                <svg class="img-placeholder" width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="100%" height="100%" fill="#cccccc"/>
+                    <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#666666">300 x 200</text>
+                </svg>
+                <div class="card-body">
+                    <h3>Card 1</h3>
+                    <p>Short summary for item 1 in the grid layout.</p>
+                    <a href="#link1" class="btn">View Details</a>
+                </div>
             </article>
-
-            <br>
 
             <!-- Small Card 2 -->
-            <article>
-                <img src="https://via.placeholder.com/300x200" alt="Small Image Placeholder 2" width="300">
-                <h3>Card Title 2</h3>
-                <p>Short description summarizing the content or feature of the second small card component.</p>
-                <a href="#">View Details</a>
+            <article class="card">
+                <svg class="img-placeholder" width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="100%" height="100%" fill="#cccccc"/>
+                    <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#666666">300 x 200</text>
+                </svg>
+                <div class="card-body">
+                    <h3>Card 2</h3>
+                    <p>Short summary for item 2 in the grid layout.</p>
+                    <a href="#link2" class="btn">View Details</a>
+                </div>
             </article>
 
-            <br>
-
             <!-- Small Card 3 -->
-            <article>
-                <img src="https://via.placeholder.com/300x200" alt="Small Image Placeholder 3" width="300">
-                <h3>Card Title 3</h3>
-                <p>Short description summarizing the content or feature of the third small card component.</p>
-                <a href="#">View Details</a>
+            <article class="card">
+                <svg class="img-placeholder" width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="100%" height="100%" fill="#cccccc"/>
+                    <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#666666">300 x 200</text>
+                </svg>
+                <div class="card-body">
+                    <h3>Card 3</h3>
+                    <p>Short summary for item 3 in the grid layout.</p>
+                    <a href="#link3" class="btn">View Details</a>
+                </div>
             </article>
 
         </section>
 
     </main>
-
-    <hr>
 
     <!-- Footer -->
     <footer>
